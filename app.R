@@ -4,11 +4,12 @@ library(plotly)
 library(tidyverse)
 library(clipr)
 
+######### Modify for your data
 pca_df <- readRDS("pca_df.rds")
 pca_cap_df <- readRDS("pca_cap_df.rds")
 num_pcs<-3
-
 datasets<-list("pca_df"=pca_df, "pca_cap_df"=pca_cap_df)
+######## 
 
 ui <- fluidPage(
   selectizeInput("colour",
