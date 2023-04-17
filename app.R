@@ -17,7 +17,6 @@ ui <- fluidPage(
     sidebarPanel(
       selectizeInput("data",
                      label = "data",
-                     #choices = c("Shotgun"="1", "Capture"="2")
                      choices = c(names(datasets))),
       selectizeInput("colour",
                      label = "colours",
@@ -54,11 +53,6 @@ server <- function(input, output, session) {
       layout(dragmode = "select") %>%
       event_register("plotly_selecting")
   })
-  
-  #output$hover <- renderPrint({
-   ## d <- event_data("plotly_hover")
-   # if (is.null(d)) "Hover events appear here (unhover to clear)" else d
-  #})
   
   output$selected <- renderPrint({
     d <- event_data("plotly_selected")
